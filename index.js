@@ -5,7 +5,7 @@ const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server({
   cors: {
-    origin: "http://localhost:3000",
+    origin: "https://socket-frontend-ochre.vercel.app/",
   },
 });
 
