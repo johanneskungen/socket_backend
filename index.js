@@ -3,14 +3,15 @@ const app = express();
 const http = require("http");
 const server = http.createServer(app);
 const { Server } = require("socket.io");
+equire("dotenv").config()
+const URL = process.env.NODE_ENV ? "https://socket-frontend-ochre.vercel.app/" : "http://localhost:3000"
 const io = new Server({
   cors: {
-    origin: "https://socket-frontend-ochre.vercel.app/",
+    origin: "*",
   },
 });
 
 io.listen(4000);
-server.listen(1000, () => console.log("Listening"));
 
 const users = [];
 
