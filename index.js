@@ -10,6 +10,7 @@ const io = new Server({
 });
 
 io.listen(4000);
+server.listen(1000, () => console.log("Listening"));
 
 const users = [];
 
