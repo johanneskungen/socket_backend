@@ -3,11 +3,14 @@ const app = express();
 const http = require("http");
 const server = http.createServer(app);
 const { Server } = require("socket.io");
-equire("dotenv").config()
-const URL = process.env.NODE_ENV ? "https://socket-frontend-ochre.vercel.app/" : "http://localhost:3000"
+require("dotenv").config();
+const URL =
+  process.env.NODE_ENV === "production"
+    ? "https://socket-frontend-ochre.vercel.app:4000"
+    : "http://localhost:3000";
 const io = new Server({
   cors: {
-    origin: "*",
+    origin: URL,
   },
 });
 
