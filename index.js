@@ -6,7 +6,7 @@ const { Server } = require("socket.io");
 require("dotenv").config();
 const URL =
   process.env.NODE_ENV === "production"
-    ? "https://socket-frontend-ochre.vercel.app:4000"
+    ? "https://socket-frontend-ochre.vercel.app"
     : "http://localhost:3000";
 const io = new Server({
   cors: {
@@ -14,7 +14,7 @@ const io = new Server({
   },
 });
 
-io.listen(4000);
+io.listen(1000);
 
 const users = [];
 
