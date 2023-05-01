@@ -14,7 +14,7 @@ const io = new Server({
   },
 });
 
-io.listen(1000);
+io.listen(process.env.PORT);
 
 const users = [];
 
